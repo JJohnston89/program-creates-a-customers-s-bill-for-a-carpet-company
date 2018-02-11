@@ -2,7 +2,7 @@
    width of the room in feet, customer discount in percent, and the cost per square foot. The program calculates the area, 
    carpet cost, labor cost, installed price, discount, subtotal, tax, and total. Then the program prints out the measurements, and the charges.
       Written by: Joshua Johnston
-		  Data: 10/9/2014
+      Data: 10/9/2014
 */
 
 
@@ -11,35 +11,35 @@
 #define TAX_RATE 8.50 
 #define LABOR_COST 0.35
 
-//   Function Declarations
+//Function Declarations
 void getData (int* length, int* width, int* discount, float* costPerSQFt);
 
 void calculate_values(int length, int width, int discount, float costPerSQFt, int* area, float* carpet_cost, 
-	                  float* total_labor_cost, float* install_price, float* Subtotal, float* Final_discount, 
-			              float* tax, float* Total_Price);
+	              float* total_labor_cost, float* install_price, float* Subtotal, float* Final_discount, 
+		      float* tax, float* Total_Price);
 
 void Calculate_Install_Price (int length, int width, float costPerSQFt, int* area, 	 
-	                            float* carpet_cost, float* total_labor_cost, float* install_price);
+	                      float* carpet_cost, float* total_labor_cost, float* install_price);
 
 void Calculate_Subtotal(int discount, float install_price, float* Subtotal, float* Final_discount);
 
 void Calculate_Total_Price(float Subtotal, float* tax, float* Total_Price);
 
 void print_result(int length, int width, int area, float costPerSQFt, float carpet_cost, 
-	                float total_labor_cost, float install_price, int discount, float Final_discount, 	
-	                float Subtotal, float tax, float Total_Price);
+	         float total_labor_cost, float install_price, int discount, float Final_discount, 	
+	         float Subtotal, float tax, float Total_Price);
 
 void print_measurements(int length, int width, int area);
 
 void print_charges(float costPerSQFt, float carpet_cost, 
-	                 float total_labor_cost, float install_price, int discount, float Final_discount, 	
-	                 float Subtotal, float tax, float Total_Price);
+	           float total_labor_cost, float install_price, int discount, float Final_discount, 	
+	           float Subtotal, float tax, float Total_Price);
 
 
 int main(void)
 {
 
-//Local Declarations
+//      Local Declarations
 
 	int length;
 	int width;
@@ -55,13 +55,13 @@ int main(void)
 	float Final_discount;
 	float tax;
 
-//Statements
+//      Statements
 
 	getData(&length, &width, &discount, &costPerSQFt);
 	
 	calculate_values(length, width, discount, costPerSQFt, &area, &carpet_cost, 
 	                 &total_labor_cost, &install_price, &Subtotal, &Final_discount,
-			             &tax, &Total_Price);
+			 &tax, &Total_Price);
 	
 	print_result(length, width, area, costPerSQFt, carpet_cost, 
 	             total_labor_cost, install_price, discount,  Final_discount, 	
@@ -80,7 +80,7 @@ int main(void)
 
 void getData (int* length, int* width, int* discount, float* costPerSQFt)
 {
-//Statements
+//      Statements
 
 	printf("Please enter length of the room (feet): ");
 	scanf("%d", length);
@@ -105,12 +105,12 @@ void getData (int* length, int* width, int* discount, float* costPerSQFt)
 */
 
 void calculate_values(int length, int width, int discount, float costPerSQFt, int* area, float* carpet_cost, 
-	                    float* total_labor_cost, float* install_price, float* Subtotal, float* Final_discount, 
-		                  float* tax, float* Total_Price )
+	              float* total_labor_cost, float* install_price, float* Subtotal, float* Final_discount, 
+		      float* tax, float* Total_Price )
 { 
 	
 	
-//Statements
+//      tatements
 
 	Calculate_Install_Price(length, width, costPerSQFt, area, carpet_cost, total_labor_cost, install_price);
 	
@@ -135,7 +135,7 @@ void calculate_values(int length, int width, int discount, float costPerSQFt, in
                                float* total_labor_cost, float* install_price)
 { 
 	
-//Statements
+//      Statements
 
 	*area = length * width;
 	*carpet_cost = *area * costPerSQFt;
@@ -154,7 +154,7 @@ void calculate_values(int length, int width, int discount, float costPerSQFt, in
 void Calculate_Subtotal(int discount, float install_price, float* Subtotal, float* Final_discount)
 { 
 
-//Statements
+//      Statements
 	
 	*Final_discount = install_price * ((float)discount / 100);
 	*Subtotal = install_price - *Final_discount;
@@ -172,7 +172,7 @@ void Calculate_Subtotal(int discount, float install_price, float* Subtotal, floa
 void Calculate_Total_Price (float Subtotal, float* tax, float* Total_Price)
 {
 
-//Statements
+//      Statements
 
 	*tax = Subtotal * TAX_RATE / 100;
 	*Total_Price= *tax + Subtotal;
@@ -186,11 +186,11 @@ void Calculate_Total_Price (float Subtotal, float* tax, float* Total_Price)
 */
  
 void print_result(int length, int width, int area, float costPerSQFt, float carpet_cost, 
-	                float total_labor_cost, float install_price, int discount, float Final_discount, 	
-	                float Subtotal, float tax, float Total_Price)
+	          float total_labor_cost, float install_price, int discount, float Final_discount, 	
+	          float Subtotal, float tax, float Total_Price)
 {
 
-//Statements
+//      Statements
 
 	print_measurements(length, width, area);
 	
@@ -209,7 +209,7 @@ void print_result(int length, int width, int area, float costPerSQFt, float carp
 void print_measurements(int length, int width, int area)
 {
 
-//Statements
+//      Statements
 
 	printf("\t\tMEASUREMENT \n\n");
 	printf("Length \t\t\t\t   %4d ft\n", length);
@@ -229,11 +229,11 @@ void print_measurements(int length, int width, int area)
 
 
 void print_charges(float costPerSQFt, float carpet_cost, 
-	                 float total_labor_cost, float install_price, int discount, float Final_discount, 	
-	                 float Subtotal, float tax, float Total_Price)
+	           float total_labor_cost, float install_price, int discount, float Final_discount, 	
+	           float Subtotal, float tax, float Total_Price)
 {
 
-//Statements
+//      Statements
 
 	printf("\t\t  CHARGES \n\n");
 	printf("Description  Cost/SQ.Ft.      Charge\n\n");
