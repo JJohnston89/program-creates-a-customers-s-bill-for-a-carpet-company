@@ -110,7 +110,7 @@ void calculate_values(int length, int width, int discount, float costPerSQFt, in
 { 
 	
 	
-//      tatements
+//      Statements
 
 	Calculate_Install_Price(length, width, costPerSQFt, area, carpet_cost, total_labor_cost, install_price);
 	
